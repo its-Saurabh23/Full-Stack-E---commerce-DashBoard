@@ -1,5 +1,4 @@
 import React from 'react';
-
 const AddProduct =()=>{
 const [name,setName] =React.useState('')
 const [price,setPrice] =React.useState('')
@@ -13,9 +12,7 @@ const addProduct = async ()=>{
         setError(true);
         return false;  
     }
-   
-
-    console.log(name,price,category,company)
+    // console.log(name,price,category,company)
     const userId = JSON.parse(localStorage.getItem('user'))._id;
     let result = fetch('http://localhost:5000/add-product',{
         method:'post',
@@ -25,7 +22,7 @@ const addProduct = async ()=>{
          }
     });
     result = await result.json();
-    console.log(result);
+    // console.log(result);
 }
     return(
         <div className='product'>
