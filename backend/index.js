@@ -56,13 +56,7 @@ app.delete("/product/:id", async(req,resp)=>{
 
 app.get("/product/:id", async(req,resp)=>{
   let reslut = await Product.findOne({_id: req.params.id});
-  resp.send( reslut) ; 
-  //   if (result) {
-
-  //   resp.send(result)  
-  // } else{
-  //   resp.send({reslut:"No Reacord Found."})
-  // }  
+  resp.send( reslut) ;  
 })
 
 app.put("/product/:id",async(req,resp)=>{
